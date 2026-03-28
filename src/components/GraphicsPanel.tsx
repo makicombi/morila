@@ -14,7 +14,7 @@ const ItemDisplay: Record<string, string> = {
 };
 
 export function GraphicsPanel({ currentRoom, activeSister, inventory, animAction }: Props) {
-  const sisterSprite = activeSister === 'Mor' ? '/assets/mor/mor_sprite.png' : '/assets/hila/hila_sprite.png';
+  const sisterSprite = activeSister === 'Mor' ? import.meta.env.BASE_URL + 'assets/mor/mor_sprite.png' : import.meta.env.BASE_URL + 'assets/hila/hila_sprite.png';
 
   const idleClass = activeSister === 'Mor' ? 'anim-mor-bob' : 'anim-hila-float';
   const actionClass = animAction === 'MAGIC' ? 'anim-magic-cast'
@@ -70,7 +70,7 @@ export function GraphicsPanel({ currentRoom, activeSister, inventory, animAction
         onError={(e) => {
           // Fallback to sample photos if sprites aren't generated yet
           const target = e.target as HTMLImageElement;
-          target.src = activeSister === 'Mor' ? '/assets/mor/mor_cowgirl.jpg' : '/assets/hila/hila_cake.jpg';
+          target.src = activeSister === 'Mor' ? import.meta.env.BASE_URL + 'assets/mor/mor_cowgirl.jpg' : import.meta.env.BASE_URL + 'assets/hila/hila_cake.jpg';
           target.style.borderRadius = '20px'; // Make it look a bit nicer if it's a square photo
         }}
       />
@@ -114,8 +114,8 @@ export function GraphicsPanel({ currentRoom, activeSister, inventory, animAction
       {/* Globally Decoupled Event Animations! Unbreakable img tags */}
       {animAction === 'MAGIC_BURN_THORNS' && (
         <>
-          <img src="/assets/npc/fireball.png" className="shooting-fireball" alt="fireball" />
-          <img src="/assets/npc/fire.png" className="fire-effect" alt="bonfire" />
+          <img src={`${import.meta.env.BASE_URL}assets/npc/fireball.png`} className="shooting-fireball" alt="fireball" />
+          <img src={`${import.meta.env.BASE_URL}assets/npc/fire.png`} className="fire-effect" alt="bonfire" />
         </>
       )}
 

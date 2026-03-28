@@ -32,9 +32,9 @@ export function useGame() {
     
     // Play general UI sounds
     if (response.includes('הלכת לכיוון')) {
-      new Audio('/assets/sounds/step_placeholder.mp3').play().catch(() => {});
+      new Audio(import.meta.env.BASE_URL + 'assets/sounds/step_placeholder.mp3').play().catch(() => {});
     } else if (response.includes('צורף') || response.includes('לקחת')) {
-      new Audio('/assets/sounds/success_chime_placeholder.mp3').play().catch(() => {});
+      new Audio(import.meta.env.BASE_URL + 'assets/sounds/success_chime_placeholder.mp3').play().catch(() => {});
     }
 
     // Capture the graphical action state to trigger animations
@@ -43,14 +43,14 @@ export function useGame() {
     
     // Play magic sound effects ONLY if the engine processed a true magic spell cast
     if (currentAction === 'MAGIC' || currentAction === 'MAGIC_BURN_THORNS') {
-      const spellSfx = new Audio('/assets/sounds/magic_spell_placeholder.mp3');
+      const spellSfx = new Audio(import.meta.env.BASE_URL + 'assets/sounds/magic_spell_placeholder.mp3');
       spellSfx.volume = 1.0;
       spellSfx.play().catch(e => console.error("SFX auto-play blocked:", e));
 
       // After the 1-second fireball travel time, unleash the 5-second burning sequence audio
       if (currentAction === 'MAGIC_BURN_THORNS') {
         setTimeout(() => {
-          const burnSfx = new Audio('/assets/sounds/thorn_burning.mp3');
+          const burnSfx = new Audio(import.meta.env.BASE_URL + 'assets/sounds/thorn_burning.mp3');
           burnSfx.volume = 0.9;
           burnSfx.play().catch(e => console.error("SFX blocked:", e));
         }, 1000);

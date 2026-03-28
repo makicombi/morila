@@ -35,8 +35,8 @@ export function OpeningScreen({ onStart }: { onStart: () => void }) {
       </div>
 
       <div className="opening-characters">
-        <img src="/assets/mor/mor_sprite.png" alt="Mor" className="opening-sprite mor-seq" />
-        <img src="/assets/hila/hila_sprite.png" alt="Hila" className="opening-sprite hila-seq" />
+        <img src={`${import.meta.env.BASE_URL}assets/mor/mor_sprite.png`} alt="Mor" className="opening-sprite mor-seq" />
+        <img src={`${import.meta.env.BASE_URL}assets/hila/hila_sprite.png`} alt="Hila" className="opening-sprite hila-seq" />
       </div>
       
       <div className="titles">

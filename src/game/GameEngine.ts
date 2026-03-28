@@ -18,7 +18,7 @@ export class GameEngine {
     // Self-healing patch: Force inject thorns if HMR erased them from cached memory
     if (this.state.currentRoomId === 'forest' && room.exits.some(e => e.locked) && !room.objects.find(o => o.id === 'thorns')) {
       room.objects.push({ 
-        id: 'thorns', name: 'קוצים', description: 'ערימת קוצים תלולים', isTakeable: false, imagePath: '/assets/npc/thorns.png'
+        id: 'thorns', name: 'קוצים', description: 'ערימת קוצים תלולים', isTakeable: false, imagePath: import.meta.env.BASE_URL + 'assets/npc/thorns.png'
       });
     }
 
@@ -181,7 +181,7 @@ export class GameEngine {
         if (northExit) northExit.locked = false;
 
         // Visually update the castle background to be open
-        room.imagePath = '/assets/backgrounds/castle_open.png';
+        room.imagePath = import.meta.env.BASE_URL + 'assets/backgrounds/castle_open.png';
         room.description = 'חזית טירת הקוסם האפל. דלת העץ הכבדה עומדת פתוחה לרווחה אל תוך אפלת המסדרון!';
         
         return 'השתמשת במפתח מזהב! דלת העץ הכבדה נפתחה בחריקה אל תוך האפלה. הדרך צפונה פנויה.';
@@ -205,7 +205,7 @@ export class GameEngine {
 
         // Alter the core room state visually and descriptively
         room.description = 'הקוסם האפל הובס ונעלם מהאולם! השער הכבד שהגן על הצינוק צפונה עומד כעת פתוח לרווחה.';
-        room.imagePath = '/assets/backgrounds/wizard_interior_open.png';
+        room.imagePath = import.meta.env.BASE_URL + 'assets/backgrounds/wizard_interior_open.png';
         room.npc = undefined; // Permanently remove the wizard sprite from the room
 
         return 'ענית נכון! הקוסם צורח: "אני לא מאמין! פתרתן את החידה שלי! ארררר!" והוא מתפוגג לחלוטין בענן עשן שחור. מולכן, שערי הברזל הכבדים נפתחים בחריקה. הדרך לצינוק פנויה!';

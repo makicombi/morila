@@ -25,8 +25,8 @@ export function EpilogueScreen({ onRestart }: { onRestart: () => void }) {
         <div className="celebration-content fade-in">
           <div className="victory-text">המלכה ניצלה! ניצחתן!</div>
           <div className="celebration-characters">
-            <img src="/assets/mor/mor_sprite.png" className="celeb-mor jump-joy" alt="Mor celebrating" />
-            <img src="/assets/hila/hila_sprite.png" className="celeb-hila jump-joy-delayed" alt="Hila celebrating" />
+            <img src={`${import.meta.env.BASE_URL}assets/mor/mor_sprite.png`} className="celeb-mor jump-joy" alt="Mor celebrating" />
+            <img src={`${import.meta.env.BASE_URL}assets/hila/hila_sprite.png`} className="celeb-hila jump-joy-delayed" alt="Hila celebrating" />
           </div>
           <button className="start-button restart-btn" onClick={onRestart}>
             שחקו שוב

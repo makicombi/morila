@@ -10,7 +10,7 @@ export const initialRooms: Room[] = [
     ],
     objects: [],
     hint: 'אפשר תמיד לבדוק את הסביבה בעזרת הפקודה "הסתכלי". נסו ללכת לכיוון שהשער נמצא בו (לדוגמה: "לכי צפונה").',
-    imagePath: '/assets/backgrounds/gates.png'
+    imagePath: import.meta.env.BASE_URL + 'assets/backgrounds/gates.png'
   },
   {
     id: 'forest',
@@ -21,11 +21,11 @@ export const initialRooms: Room[] = [
       { direction: 'צפון', targetRoomId: 'castle_gates', locked: true, requiredItem: 'שרביט אש', lockedDescription: 'הקוצים חוסמים את הדרך. אולי מור יכולה להשתמש בקסם אש כדי לשרוף אותם?' }
     ],
     objects: [
-      { id: 'wand', name: 'שרביט אש', description: 'שרביט עתיק שיכול לירות כדורי אש.', isTakeable: true, imagePath: '/assets/npc/wand.png', xPercent: 40, yPercent: 15 },
-      { id: 'thorns', name: 'קוצים גדולים', description: 'ערימת קוצים תלולים חוסמת לחלוטין את הדרך.', isTakeable: false, imagePath: '/assets/npc/thorns.png', xPercent: 50, yPercent: 40 }
+      { id: 'wand', name: 'שרביט אש', description: 'שרביט עתיק שיכול לירות כדורי אש.', isTakeable: true, imagePath: import.meta.env.BASE_URL + 'assets/npc/wand.png', xPercent: 40, yPercent: 15 },
+      { id: 'thorns', name: 'קוצים גדולים', description: 'ערימת קוצים תלולים חוסמת לחלוטין את הדרך.', isTakeable: false, imagePath: import.meta.env.BASE_URL + 'assets/npc/thorns.png', xPercent: 50, yPercent: 40 }
     ],
     hint: 'כדי לעבור את הקוצים, צריך קסם חזק. האם אספתן את כל מה שיש ביער? אולי מור יכולה להשתמש בו?',
-    imagePath: '/assets/backgrounds/forest.png'
+    imagePath: import.meta.env.BASE_URL + 'assets/backgrounds/forest.png'
   },
   {
     id: 'castle_gates',
@@ -36,10 +36,10 @@ export const initialRooms: Room[] = [
       { direction: 'צפון', targetRoomId: 'wizard_hall', locked: true, requiredItem: 'מפתח מזהב', lockedDescription: 'דלת הטירה הפנימית נעולה. צריך למצוא דרך להגיע למפתח ולפתוח אותה.' }
     ],
     objects: [
-      { id: 'gold_key', name: 'מפתח מזהב', description: 'מפתח נוצץ שתלוי גבוה. הילה אולי יכולה לרחף אליו!', isTakeable: true, imagePath: '/assets/npc/gold_key.png', xPercent: 70, yPercent: 60 }
+      { id: 'gold_key', name: 'מפתח מזהב', description: 'מפתח נוצץ שתלוי גבוה. הילה אולי יכולה לרחף אליו!', isTakeable: true, imagePath: import.meta.env.BASE_URL + 'assets/npc/gold_key.png', xPercent: 70, yPercent: 60 }
     ],
     hint: 'המפתח מונח גבוה, רק מישהי שיכולה לרחף תגיע אליו. נסו פקודות כמו "החליפי אחות" ואז לקחת אותו.',
-    imagePath: '/assets/backgrounds/castle.png'
+    imagePath: import.meta.env.BASE_URL + 'assets/backgrounds/castle.png'
   },
   {
     id: 'wizard_hall',
@@ -53,13 +53,13 @@ export const initialRooms: Room[] = [
     npc: {
       id: 'wizard',
       name: 'הקוסם האפל',
-      imagePath: '/assets/npc/dark_wizard.png',
+      imagePath: import.meta.env.BASE_URL + 'assets/npc/dark_wizard.png',
       dialogue: '"חושבות שתוכלו לעבור אותי?! אם תפתרו את החידה שלי אתן אתן לכן לעבור ללא קרב: קלה כמו נוצה, אבל גם הענק הכי חזק לא יוכל להחזיק אותי להרבה זמן. מה אני?"',
       riddle: 'קלה כמו נוצה...',
       riddleAnswer: 'נשימה'
     },
     hint: 'חכמותיי, תענו לו על החידה בעזרת הפקודה "עני <התשובה>". התשובה היא נשימה.',
-    imagePath: '/assets/backgrounds/wizard_interior.png'
+    imagePath: import.meta.env.BASE_URL + 'assets/backgrounds/wizard_interior.png'
   },
   {
     id: 'dungeon',
@@ -72,11 +72,11 @@ export const initialRooms: Room[] = [
     npc: {
       id: 'queen',
       name: 'מלכת הפיות',
-      imagePath: '/assets/npc/fairy_queen.png',
+      imagePath: import.meta.env.BASE_URL + 'assets/npc/fairy_queen.png',
       dialogue: '"מור, הילה! הקסם של הכלוב קר! פתחו את פתח האוורור וזרקו פנימה קסם חם!"'
     },
     hint: 'ראשית, החליפו להילה והשתמשו בפקודה "השתמשי ריחוף" או "תפעילי ריחוף" כדי לפתוח. אחר כך, החליפי למור והקלידי "השתמשי שרביט" לירות אל תוך הכלוב.',
-    imagePath: '/assets/backgrounds/dungeon.png'
+    imagePath: import.meta.env.BASE_URL + 'assets/backgrounds/dungeon.png'
   }
 ];
 

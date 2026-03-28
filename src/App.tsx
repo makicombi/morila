@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-      <audio ref={bgMusicRef} src="/assets/sounds/narnia_theme_placeholder.mp3" loop />
+      <audio ref={bgMusicRef} src={`${import.meta.env.BASE_URL}assets/sounds/narnia_theme_placeholder.mp3`} loop />
       {renderPhase()}
     </>
   );
